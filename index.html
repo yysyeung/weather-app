@@ -14,9 +14,121 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Hello World</h1>
-      <a href="" class="btn btn-primary">Click me</a>
+    <div id="root">
+      <div class="App">
+        <div class="container">
+          <div class="Weather">
+            <form>
+              <div class="row">
+                <div class="col-9">
+                  <input
+                    type="search"
+                    placeholder="Enter a city..."
+                    class="form-control search-input"
+                  />
+                </div>
+                <div class="col-3 p-0">
+                  <input
+                    type="submit"
+                    class="btn btn-primary w-100"
+                    value="Search"
+                  />
+                </div>
+              </div>
+            </form>
+            <div class="WeatherInfo">
+              <div class="row">
+                <div class="col-6">
+                  <h1>London</h1>
+                  <ul>
+                    <li>
+                      <span> "Sunday" "10" ":" "28" </span>
+                      ", " "Broken Clouds"
+                    </li>
+                    <li>
+                      "Humidity: "
+                      <strong> "85" "% </strong>
+                      ", Wind:"
+                      <strong> "3.09" "km/h" </strong>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <div class="temperature-container justify-right">
+                    <canvas width="50" height="50"></canvas>
+                    <span class="temperature">18</span>
+                    <span class="unit">℃</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="weatherforecastrow">
+              <div class="row">
+                <div class="col">
+                  <div class="weatherforecastpreview">
+                    <div class="forecast-time">Sun</div>
+                    <canvas width="38" height="38"></canvas>
+                    <div class="forecast-temperature">
+                      <span class="forecast-temperature-max">24º</span>
+                      <span class="forecast-temperature-min">13º</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Mon</div>
+                    <canvas width="38" height="38"></canvas>
+                    <div class="forecast-temperature">
+                      <span class="forecast-temperature-max">24º</span>
+                      <span class="forecast-temperature-min">13º</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Tues</div>
+                    <canvas width="38" height="38"></canvas>
+                    <div class="forecast-temperature">
+                      <span class="forecast-temperature-max">24º</span>
+                      <span class="forecast-temperature-min">13º</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Wed</div>
+                    <canvas width="38" height="38"></canvas>
+                    <div class="forecast-temperature">
+                      <span class="forecast-temperature-max">24º</span>
+                      <span class="forecast-temperature-min">13º</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Thurs</div>
+                    <canvas width="38" height="38"></canvas>
+                    <div class="forecast-temperature">
+                      <span class="forecast-temperature-max">24º</span>
+                      <span class="forecast-temperature-min">13º</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer>
+              <a href="XXX" target="_blank" rel="noopener noreferrer"
+                >Open-sourced on GitHub</a
+              >
+              and
+              <a href="XXX" target="_blank" rel="noopener noreferrer"
+                >hosted on Netlify</a
+              >
+              - coded by Yvonne Yeung
+            </footer>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
