@@ -101,7 +101,7 @@ body {
   list-style: none;
 }
 
-.Weather li strong {
+.WeatherInfo li strong {
   color: #f65282;
   font-weight: normal;
 }
