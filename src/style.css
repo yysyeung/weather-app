@@ -142,3 +142,20 @@ body {
 .Weather footer a {
   color: #885df1;
 }
+
+.weatherforecastpreview {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.forecast-icon {
+  display: block;
+}
+
+.forecast-temperature {
+  font-size: 14px;
+}
+
+.forecast-temperature .forecast-temperature-max {
+  color: black;
+}
