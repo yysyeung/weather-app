@@ -88,6 +88,38 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+// Show 5-day weather forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col">
+          <div class="weatherforecastpreview">
+              <div class="forecast-day">${day}</div>
+                <div class="forecast-icon">
+                <img
+                    src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+                    alt=""
+                    width="45"/>
+                </div>
+                <div class="forecast-temperature">
+                  <span class="forecast-temperature-max">24º</span>
+                  <span class="forecast-temperature-min">13º</span>
+                </div>
+              </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Global variables
 
 searchCity("London");
@@ -106,3 +138,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+displayForecast();
