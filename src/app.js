@@ -24,6 +24,13 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 // Show Weather
 function displayWeatherCondition(response) {
   celsiusTemperature = response.data.main.temp;
@@ -101,31 +108,39 @@ function displayCelsiusTemperature(event) {
 
 // Show 5-day weather forecast
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    console.log(index);
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col">
           <div class="weatherforecastpreview">
-              <div class="forecast-day">${day}</div>
+              <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
                 <div class="forecast-icon">
                 <img
-                    src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+                    src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png"
                     alt=""
                     width="45"/>
                 </div>
                 <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">24º</span>
-                  <span class="forecast-temperature-min">13º</span>
+                  <span class="forecast-temperature-max">${Math.round(
+                    forecastDay.temp.max
+                  )}º </span>
+                  <span class="forecast-temperature-min">${Math.round(
+                    forecastDay.temp.min
+                  )}º </span>
                 </div>
               </div>
           </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
